@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+/*
+Button used to select todos in the Footer
+*/
 const Link = ({ active, children, onClick }) => (
     <button
        onClick={onClick}
