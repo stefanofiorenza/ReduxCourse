@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { addTodo } from '../actions'
 
-const AddTodo = ({ dispatch }) => {
-  
+const AddTodo = () => {
   let [inputValue, setInput] = useState('')
+
+  const dispatch = useDispatch();
 
   const onSubmit= e => {
     e.preventDefault()
     if (!inputValue.trim()) {
       return
     }
-    dispatch(addTodo(inputValue))
-    
+    dispatch(addTodo(inputValue));    
   }
 
   const onTextChange =e => {
@@ -32,4 +32,4 @@ const AddTodo = ({ dispatch }) => {
   )
 }
 
-export default connect()(AddTodo) //connect enables here the dispatch 
+export default AddTodo 
