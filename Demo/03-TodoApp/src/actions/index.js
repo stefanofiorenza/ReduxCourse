@@ -1,44 +1,37 @@
-let nextTodoId = 0
+let nextTodoId = 0 //initialize counter for todoId
 
 
-
-
-export const addTodo = text => {
-
+export const addTodo = (text) => {
   return {
     type: 'ADD_TODO',
     id: nextTodoId++,
     text:text
   };
-
 } 
 
-export const setVisibilityFilter = filter => {
+export const setVisibilityFilter = (filter) => {
   return {
     type: 'SET_VISIBILITY_FILTER',
     filter:filter
   }; 
 }
 
-export const toggleTodo = id => {
- 
+export const toggleTodo = (id) => { 
   return {
     type: 'TOGGLE_TODO',
     id:id
   } 
 }
 
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+
+
+/* more concise syntax since ES6 */
 
 /*
-export const addTodo = text => ({
+export const addTodo = text => ({ //round brackets wrap result returned (in this case an object {}) same as return { type: 'ADD_TODO', ...}
   type: 'ADD_TODO',
   id: nextTodoId++,
-  text
+  text // same as text:text
 })
 
 export const setVisibilityFilter = filter => ({
